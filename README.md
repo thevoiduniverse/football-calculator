@@ -75,14 +75,6 @@ When prompted, paste your API key and click "Connect".
 - [API-Football](https://www.api-football.com/) for live data
 - LocalStorage for caching and API key storage
 
-## Design
-
-Inspired by [Google Language Explorer](https://sites.research.google/languages/) with:
-- Clean, minimal aesthetic
-- Light theme with blue accents
-- Generous whitespace
-- Clear typography hierarchy
-
 ## License
 
 MIT
