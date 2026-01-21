@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERSUS | Football Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-grid"></div>
+    <div class="bg-gradient-orb orb-1"></div>
+    <div class="bg-gradient-orb orb-2"></div>
+    <div class="bg-noise"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">⚽</span>
+            <span class="brand-text">VERSUS</span>
+        </div>
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-tab="players">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                Players
+            </button>
+            <button class="nav-tab" data-tab="teams">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Teams
+            </button>
+        </div>
+        <div class="nav-actions">
+            <button class="btn-reset" onclick="resetComparison()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                    <path d="M3 3v5h5"></path>
+                </svg>
+                Reset
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">
+                <span class="title-line">COMPARE</span>
+                <span class="title-line accent">DOMINATE</span>
+            </h1>
+            <p class="hero-subtitle">Select players or teams to reveal the ultimate statistical showdown</p>
+        </section>
+
+        <!-- Players Section -->
+        <section id="players-section" class="comparison-section active">
+            <!-- Selection Area -->
+            <div class="selection-container">
+                <div class="selection-header">
+                    <h2>Select Players to Compare</h2>
+                    <span class="selection-count"><span id="player-count">0</span> / 4 selected</span>
+                </div>
+
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="player-search" placeholder="Search players..." autocomplete="off">
+                </div>
+
+                <div class="entity-grid" id="player-grid">
+                    <!-- Players will be dynamically inserted -->
+                </div>
+            </div>
+
+            <!-- Comparison Area -->
+            <div class="comparison-arena" id="player-arena">
+                <div class="arena-header">
+                    <div class="arena-title">
+                        <span class="vs-badge">VS</span>
+                        <h2>Head to Head</h2>
+                    </div>
+                    <div class="arena-legend">
+                        <span class="legend-item best">
+                            <span class="legend-dot"></span>
+                            Best in comparison
+                        </span>
+                    </div>
+                </div>
+
+                <div class="comparison-cards" id="player-comparison-cards">
+                    <!-- Selected player cards will appear here -->
+                    <div class="empty-state">
+                        <div class="empty-icon">👆</div>
+                        <p>Select 2-4 players above to start comparing</p>
+                    </div>
+                </div>
+
+                <div class="stats-comparison" id="player-stats-comparison">
+                    <!-- Stats bars will be dynamically inserted -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Teams Section -->
+        <section id="teams-section" class="comparison-section">
+            <!-- Selection Area -->
+            <div class="selection-container">
+                <div class="selection-header">
+                    <h2>Select Teams to Compare</h2>
+                    <span class="selection-count"><span id="team-count">0</span> / 4 selected</span>
+                </div>
+
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="team-search" placeholder="Search teams..." autocomplete="off">
+                </div>
+
+                <div class="entity-grid" id="team-grid">
+                    <!-- Teams will be dynamically inserted -->
+                </div>
+            </div>
+
+            <!-- Comparison Area -->
+            <div class="comparison-arena" id="team-arena">
+                <div class="arena-header">
+                    <div class="arena-title">
+                        <span class="vs-badge">VS</span>
+                        <h2>Head to Head</h2>
+                    </div>
+                    <div class="arena-legend">
+                        <span class="legend-item best">
+                            <span class="legend-dot"></span>
+                            Best in comparison
+                        </span>
+                    </div>
+                </div>
+
+                <div class="comparison-cards" id="team-comparison-cards">
+                    <!-- Selected team cards will appear here -->
+                    <div class="empty-state">
+                        <div class="empty-icon">👆</div>
+                        <p>Select 2-4 teams above to start comparing</p>
+                    </div>
+                </div>
+
+                <div class="stats-comparison" id="team-stats-comparison">
+                    <!-- Stats bars will be dynamically inserted -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>VERSUS Football Comparison &copy; 2024</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
