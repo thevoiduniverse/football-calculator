@@ -6,6 +6,9 @@ const CONFIG = {
     // API-Football Configuration
     API_BASE_URL: 'https://v3.football.api-sports.io',
 
+    // Default API Key (for public use)
+    DEFAULT_API_KEY: 'd0cd54a26ebecc0fcb9825095925da6b',
+
     // LocalStorage Keys
     STORAGE_KEYS: {
         API_KEY: 'football_compare_api_key',

@@ -4,9 +4,9 @@
 // ============================================
 
 const FootballAPI = {
-    // Get API key from storage
+    // Get API key (uses default if none stored)
     getApiKey() {
-        return localStorage.getItem(CONFIG.STORAGE_KEYS.API_KEY);
+        return localStorage.getItem(CONFIG.STORAGE_KEYS.API_KEY) || CONFIG.DEFAULT_API_KEY;
     },
 
     // Save API key to storage
